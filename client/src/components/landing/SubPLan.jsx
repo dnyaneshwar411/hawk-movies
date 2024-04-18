@@ -1,3 +1,5 @@
+const styleBtn = "w-full md:w-auto mt-4";
+
 export default function SubPLan({ plan, yearly }) {
   return <div
     key={plan.id}
@@ -6,7 +8,7 @@ export default function SubPLan({ plan, yearly }) {
     <h4>{plan.title}</h4>
     <p className="my-4">{plan.description}</p>
     <p className="my-4"><span className="text-white font-bold text-3xl">${yearly ? plan.price * 12 : plan.price}</span> /month</p>
-    <button className="btn-dark mr-4">Start Free Trial</button>
-    <button className="btn-red">Choose Plan</button>
+    <button className={`btn-dark mr-4 ${styleBtn}`}>Start Free Trial</button>
+    <button className={`btn-red ${styleBtn}`}>Choose Plan</button>
   </div>
 }
