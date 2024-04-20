@@ -4,11 +4,11 @@ import { scrollMoviesBar } from "../../../utils/eventListeners";
 export default function BarNavigation({ carouselId }) {
 
   function scrollToLeft() {
-    scrollMoviesBar(carouselId, -1)
+    scrollMoviesBar(carouselId, -1);
   }
 
   function scrollToRight() {
-    scrollMoviesBar(carouselId)
+    scrollMoviesBar(carouselId);
   }
 
   return <div className="w-max mt-8 lg:mt-0 ml-auto flex bg-2 p-2 items-center gap-1 rounded-md border-4 border-[#141414]">

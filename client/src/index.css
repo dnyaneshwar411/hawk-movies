@@ -170,8 +170,28 @@ footer li {
 }
 
 /* carousel movie cards */
-.carousel-card {
+.cards-sm .carousel-card {
   min-width: calc(50% - 0.5rem);
+}
+
+.cards-sm .carousel-card img {
+  aspect-ratio: 1/1.15;
+}
+
+.cards-md .carousel-card {
+  min-width: calc(50% - 0.5rem);
+}
+
+.cards-md .carousel-card img {
+  aspect-ratio: 1 / 1;
+}
+
+.cards-lg .carousel-card {
+  min-width: calc(50% - 0.5rem);
+}
+
+.cards-lg .carousel-card img {
+  aspect-ratio: 1 / 1.26;
 }
 
 /* media queries */
@@ -194,7 +214,15 @@ footer li {
 }
 
 @media (min-width:680px) and (max-width:1024px) {
-  .carousel-card {
+  .cards-sm .carousel-card {
+    min-width: calc(calc(100% - 2rem) / 3);
+  }
+
+  .cards-md .carousel-card {
+    min-width: calc(calc(100% - 2rem) / 3);
+  }
+
+  .cards-lg .carousel-card {
     min-width: calc(calc(100% - 2rem) / 3);
   }
 }
@@ -214,8 +242,13 @@ footer li {
     aspect-ratio: 1/1;
   }
 
-  .carousel-card {
+  .cards-sm .carousel-card {
     min-width: calc(calc(100% - 4rem) / 5);
+  }
+
+  .cards-md .carousel-card,
+  .cards-lg .carousel-card {
+    min-width: calc(calc(100% - 3rem) / 4);
   }
 }
 

@@ -6,8 +6,6 @@ export function toggleBodyScroll(toggle) {
   document.body.style.overflow = toggle ? "hidden" : "auto";
 }
 
-
-
 /**
  * Scroll movies bar to go through different movie cards in that carousel.
  * @param {*} carouselId HTML id of the MOVIES BAR that is being scrolled.

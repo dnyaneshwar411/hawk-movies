@@ -1,4 +1,4 @@
-import heroImg from "/hero-banner-2.png"
+import heroImg from "/hero-banner-2.webp";
 
 export default function Hero() {
   return <>

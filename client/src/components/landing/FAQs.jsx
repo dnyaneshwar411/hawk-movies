@@ -4,7 +4,7 @@ import FAQHeading from "./FAQHeading";
 import FAQ from "./FAQ";
 
 export default function FAQs() {
-  return <div className="block-margin">
+  return <div className="block-margin" id="faq">
     <FAQHeading />
 
     <div className="md:grid grid-cols-2 place-content-start gap-x-10 mt-16">

@@ -1,8 +1,8 @@
+import { useEffect, useState } from "react";
 import { BellIcon, MagnifyingGlassIcon, Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import Tabs from "./Tabs";
 import Logo from "./Logo";
-import { useEffect, useState } from "react";
 import { toggleBodyScroll } from "../../../utils/eventListeners";
 
 export default function Nav() {
@@ -15,7 +15,7 @@ export default function Nav() {
     toggleBodyScroll(toggled);
   }, [toggled])
 
-  return <nav className=" bg-gradient-to-b from-[#000] to-transparent padding-inline w-full fixed top-0 left-0 flex items-center justify-between py-4 backdrop-blur-[2px]">
+  return <nav className="bg-gradient-to-b from-[#0F0F0F] to-transparent padding-inline w-full fixed top-0 left-0 flex items-center justify-between py-4 backdrop-blur-[3px]">
     <Logo />
 
     <Tabs toggled={toggled} setter={hideSidebar} />

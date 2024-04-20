@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 
@@ -8,10 +8,10 @@ export default function Footer() {
       <div className="w-1/2 lg:w-1/6">
         <h3 className="mb-6">Home</h3>
         <ul>
-          <li><NavLink>Categories</NavLink></li>
-          <li><NavLink>Devices</NavLink></li>
-          <li><NavLink>Pricing</NavLink></li>
-          <li><NavLink>FAQ</NavLink></li>
+          <li><Link to="/#explore-movies">Categories</Link></li>
+          <li><NavLink to="/#devices">Devices</NavLink></li>
+          <li><NavLink to="/#pricing">Pricing</NavLink></li>
+          <li><NavLink to="/#faq">FAQ</NavLink></li>
         </ul>
       </div>
       <div className="w-1/2 lg:w-1/6">

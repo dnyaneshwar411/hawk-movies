@@ -1,8 +1,7 @@
-import { useParams } from "react-router-dom";
-
-import Footer from "./components/helpers/footer/Footer";
-import Router from "./routes/Router";
 import Nav from "./components/helpers/nav/Nav";
+import Footer from "./components/helpers/footer/Footer";
+
+import Router from "./routes/Router";
 
 export default function App() {
   return (
@@ -14,11 +13,4 @@ export default function App() {
       <Footer />
     </>
   )
-}
-
-export function Movies() {
-  const { id } = useParams()
-  return <div>
-    number - {id}
-  </div>
 }
