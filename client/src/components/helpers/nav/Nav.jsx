@@ -15,7 +15,7 @@ export default function Nav() {
     toggleBodyScroll(toggled);
   }, [toggled])
 
-  return <nav className="bg-gradient-to-b from-[#0F0F0F] to-transparent padding-inline w-full fixed top-0 left-0 flex items-center justify-between py-4 backdrop-blur-[3px]">
+  return <nav className="bg-gradient-to-b from-[#0F0F0F] to-transparent padding-inline w-full fixed top-0 left-0 flex items-center justify-between py-4 backdrop-blur-[3px] z-30">
     <Logo />
 
     <Tabs toggled={toggled} setter={hideSidebar} />

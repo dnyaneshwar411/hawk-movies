@@ -11,7 +11,7 @@ export default function BarNavigation({ carouselId }) {
     scrollMoviesBar(carouselId);
   }
 
-  return <div className="w-max mt-8 lg:mt-0 ml-auto flex bg-2 p-2 items-center gap-1 rounded-md border-4 border-[#141414]">
+  return <div className="w-max mt-8 hidden lg:flex lg:mt-0 ml-auto bg-2 p-2 items-center gap-1 rounded-md border-4 border-[#141414]">
 
     <ArrowLeftIcon onClick={scrollToLeft} className="w-10 bg-[#1A1A1A] p-2 cursor-pointer hover:bg-[#0f0f0f] hover:border-4 border-[#1a1a1a]" />
 

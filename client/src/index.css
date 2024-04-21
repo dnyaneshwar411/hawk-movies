@@ -18,6 +18,25 @@
     scrollbar-width: none;
     /* Firefox */
   }
+
+  /* ===== Scrollbar CSS ===== */
+  .custom-scrollbar {
+    scrollbar-color: var(--accent);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 12px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 12px;
+  }
 }
 
 :root {
@@ -171,7 +190,7 @@ footer li {
 
 /* carousel movie cards */
 .cards-sm .carousel-card {
-  min-width: calc(50% - 0.5rem);
+  min-width: calc(240px);
 }
 
 .cards-sm .carousel-card img {
@@ -179,7 +198,8 @@ footer li {
 }
 
 .cards-md .carousel-card {
-  min-width: calc(50% - 0.5rem);
+  min-width: calc(250px);
+  max-width: 100%;
 }
 
 .cards-md .carousel-card img {
@@ -187,7 +207,8 @@ footer li {
 }
 
 .cards-lg .carousel-card {
-  min-width: calc(50% - 0.5rem);
+  min-width: calc(270px);
+  max-width: 100%;
 }
 
 .cards-lg .carousel-card img {

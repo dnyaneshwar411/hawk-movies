@@ -1,13 +1,13 @@
 import BarNavigation from "./BarNavigation";
 
-export default function BarHeading(params) {
+export default function BarHeading({ title, info, carouselId }) {
   return <div>
-    <div className="lg:flex items-start justify-between">
+    <div className="lg:flex items-center justify-between">
       <div>
-        <h2>Explore our wide variety of categories</h2>
-        <p className="mt-4">Whether youre looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new</p>
+        <h2>{title}</h2>
+        {info && <p className="mt-4">{info}</p>}
       </div>
-      <BarNavigation {...params} />
+      <BarNavigation carouselId={carouselId} />
     </div>
   </div>
 }
