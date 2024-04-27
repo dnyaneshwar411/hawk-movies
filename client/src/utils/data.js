@@ -1,8 +1,6 @@
 import { DevicePhoneMobileIcon, DeviceTabletIcon, ComputerDesktopIcon, TvIcon, RocketLaunchIcon, CameraIcon } from "@heroicons/react/24/outline"
 
-/**
- * Facilities of landing page.
- */
+// Facilities of landing page.
 export const facilities = [
   { id: 1, icon: DevicePhoneMobileIcon, title: "Smartphones", description: "StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store" },
   { id: 2, icon: DeviceTabletIcon, title: "Tablet", description: "StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store" },
@@ -13,6 +11,7 @@ export const facilities = [
 
 ];
 
+// Faqs on landing page.
 export const faqs = [
   { id: 1, question: "What is HawksMovies?", answer: "StreamVibe is a streaming service that allows you to watch movies and shows on demand." },
   { id: 2, question: "How much does StreamVibe cost?", answer: "StreamVibe is a streaming service that allows you to watch movies and shows on demand." },
