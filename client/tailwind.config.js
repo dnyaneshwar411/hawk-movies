@@ -5,6 +5,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    scrollSnapType: {
+      'proximity': "proximity"
+    },
     extend: {},
   },
   plugins: [],

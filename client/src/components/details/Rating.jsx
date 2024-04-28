@@ -1,6 +1,6 @@
 import { StarIcon } from "@heroicons/react/24/solid";
 
-export default function Review({ rating }) {
+export default function Rating({ rating }) {
   return <div className="flex gap-0 mt-2">
     {Array.from({ length: Math.floor(rating) }, (_, i) => i).map(index =>
       <StarIcon key={index} className="logo-md text-[#E50000]" />

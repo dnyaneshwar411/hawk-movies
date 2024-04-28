@@ -1,5 +1,5 @@
 import { CalendarIcon, LanguageIcon, StarIcon, Squares2X2Icon } from "@heroicons/react/24/outline";
-import Review from "./Review";
+import Review from "./Rating";
 import Position from "./Position";
 import Cateorize from "./Cateorize";
 
