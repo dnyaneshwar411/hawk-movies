@@ -4,6 +4,7 @@ import MoviesShows from "../pages/MoviesShows";
 import Landing from "../pages/Landing";
 import Details from "../pages/Details";
 import Support from "../pages/Support";
+import Subscription from "../pages/Subscription";
 
 export default function router() {
   return <Routes>
@@ -11,7 +12,7 @@ export default function router() {
     <Route path="/movies-shows" element={<MoviesShows />} />
     <Route path="movies-shows/:type/:id" element={<Details />} />
     <Route path="/support" element={<Support />} />
-    <Route path="/subscriptions" element={<>Subscription</>} />
+    <Route path="/subscriptions" element={<Subscription />} />
     <Route path="*" element={<>page not found</>} />
   </Routes>
 }

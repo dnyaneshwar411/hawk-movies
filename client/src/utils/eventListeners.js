@@ -8,8 +8,8 @@ export function toggleBodyScroll(toggle) {
 
 /**
  * Scroll movies bar to go through different movie cards in that carousel.
- * @param {*} carouselId HTML id of the MOVIES BAR that is being scrolled.
- * @param {*} left A Boolean value that decides if you want to scroll the movies bar to right or left.
+ * @param {*} carouselId HTML id of the carousel that is being scrolled.
+ * @param {*} left A default parameter with a Boolean value that decides if you want to scroll the carousel to right or left.
  */
 export function scrollMoviesBar(carouselId, left = 1) {
   const carousel = document.getElementById(carouselId);

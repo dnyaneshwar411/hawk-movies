@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { BellIcon, MagnifyingGlassIcon, Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
+import { toggleBodyScroll } from "../../utils/eventListeners";
+
 import Tabs from "./Tabs";
 import Logo from "./Logo";
-import { toggleBodyScroll } from "../../../utils/eventListeners";
 
 export default function Nav() {
   const [toggled, setToggled] = useState(false);
@@ -13,7 +14,7 @@ export default function Nav() {
 
   useEffect(function () {
     toggleBodyScroll(toggled);
-  }, [toggled])
+  }, [toggled]);
 
   return <nav className="bg-gradient-to-b from-[#0F0F0F] to-transparent padding-inline w-full fixed top-0 left-0 flex items-center justify-between py-4 backdrop-blur-[3px] z-30">
     <Logo />

@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { BellIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
-import { tabsStyles } from "../../../utils/styles";
+import { tabsStyles } from "../../utils/styles";
 
-const linkStyle = "w-40 px-4 py-2 rounded-md lg:w-max my-2 lg:my-0"
+const linkStyle = "w-40 px-4 py-2 rounded-md lg:w-max my-2 lg:my-0";
 
 export default function Tabs({ toggled, setter }) {
   return <div className={`${tabsStyles} ${toggled ? "left-0" : "left-[-115%]"} mt-4 z-10`}>
