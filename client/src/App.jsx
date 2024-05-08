@@ -1,3 +1,5 @@
+import { Toaster } from "react-hot-toast";
+
 import Nav from "./components/nav/Nav";
 import Footer from "./components/footer/Footer";
 
@@ -8,6 +10,7 @@ export default function App() {
   return (
     <>
       <Nav />
+      <Toaster position="bottom-right" toastOptions={{ duration: 2000 }} />
       <main>
         <Router />
         <div className="padding-inline">
