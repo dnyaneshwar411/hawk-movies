@@ -13,6 +13,8 @@ export function userSlice(state = userInitialState, action) {
       return { account: action.payload, isLoggedIn: true, loading: false };
     case "user/unset":
       return { account: null, isLoggedIn: false, loading: false };
+    case "user/unset-loading":
+      return { account: null, isLoggedIn: false, loading: false };
     default:
       return state;
   }
@@ -34,5 +36,6 @@ export function unset() {
     const response = await send("auth/logout");
     if (response.success) dispatch({ type: "user/unset" });
     else toast.error(`Unable to logout - ${response.payload}`);
+    dispatch({ type: "user/unset-loading" })
   }
 }
