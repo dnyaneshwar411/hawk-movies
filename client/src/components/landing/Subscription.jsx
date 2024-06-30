@@ -10,14 +10,10 @@ const plans = [
 
 export default function Subscription() {
   const [yearly, setYearly] = useState(false);
-
   return <div className="block-margin">
     <SubscriptionHeading yearly={yearly} setter={setYearly} />
-
     <div className="lg:flex gap-8 mt-10 lg:mt-20">
-
       {plans.map(plan => <SubPLan key={plan.id} plan={plan} yearly={yearly} />)}
-
     </div>
   </div>
 }

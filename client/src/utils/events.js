@@ -17,3 +17,15 @@ export function scrollMoviesBar(carouselId, left = 1) {
 
   carousel.scrollLeft += (cardWidth * left);
 }
+
+/**
+ * Play pause the video (i.e. iframe)
+ * @param {*} vidFunc pass what functionality to be performed.
+ */
+export function controlIframeVideo(vidFunc) {
+  var iframe = document.getElementsByTagName("iframe")[0].contentWindow;
+  iframe.postMessage(
+    '{"event":"command","func":"' + vidFunc + '","args":""}',
+    "*"
+  );
+}

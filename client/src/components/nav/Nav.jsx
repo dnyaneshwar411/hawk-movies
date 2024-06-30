@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { BellIcon, MagnifyingGlassIcon, Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { UserIcon } from "@heroicons/react/24/solid";
 
-import { toggleBodyScroll } from "../../utils/eventListeners";
+import { toggleBodyScroll } from "../../utils/events";
 
 import Tabs from "./Tabs";
 import Logo from "./Logo";

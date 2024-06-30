@@ -1,5 +1,10 @@
 const URL = import.meta.env.VITE_BACKEND_URL;
 
+/**
+ * Retrieve data related to user from the API.
+ * @param {*} endpoint what is the endpoint
+ * @returns {success: boolean; payload: `data retrieved from the bcckend`}
+ */
 export async function retrieve(endpoint) {
   try {
     const response = await fetch(`${URL}/api/${endpoint}`, {
@@ -8,13 +13,18 @@ export async function retrieve(endpoint) {
 
     const data = await response.json();
     if (!response.ok) throw new Error(data.payload);
-
-    return { success: true, payload: data };
+    return { success: true, payload: data.payload };
   } catch (error) {
-    return { success: false }
+    return { success: false, payload: error.message }
   }
 }
 
+/**
+ * Update and send informtion orelated to the user to the endpoint.
+ * @param {*} endpoint 
+ * @param {*} information 
+ * @returns 
+ */
 export async function send(endpoint, information = {}) {
   try {
     const response = await fetch(`${URL}/api/${endpoint}`, {

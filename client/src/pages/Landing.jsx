@@ -10,6 +10,7 @@ export default function Landing() {
     <div className="padding-inline">
       <div className="block-margin">
         <MovieBar
+          endpoint=""
           carouselId="explore-movies"
           title="Explore our wide variety of categories"
           info="Whether you're looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new" />

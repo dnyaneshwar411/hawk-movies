@@ -5,8 +5,8 @@ export default function Cateorize({ Icon, title, categories }) {
     <p className={titleStyles}><Icon className="logo-md" />{title}</p>
 
     <div className="flex flex-wrap gap-2">
-      {categories.map(category =>
-        <span key={category} className="bg-2 px-4 py-2 border-2 border-[#262626] rounded-md">{category}</span>
+      {categories.map((category, index) =>
+        <span key={index} className="bg-2 px-4 py-2 border-2 border-[#262626] rounded-md">{category}</span>
       )}
     </div>
 

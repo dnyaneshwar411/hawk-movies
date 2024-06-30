@@ -5,6 +5,25 @@
 @tailwind utilities;
 
 @layer utilities {
+  .info {
+    @apply bg-1 p-[16px] lg:p-[32px] border-2 border-[#262626] rounded-md;
+  }
+  
+  .tab {
+    @apply bg-3 flex flex-col items-center justify-center fixed h-[100vh] py-20 w-screen top-0 border-r-4 lg:static lg:w-auto lg:h-auto lg:flex-row lg:p-2 lg:border-4 border-[#1a1a1a] rounded-md transition-all duration-500;
+  }
+  
+  .icon-sm {
+    @apply w-4;
+  }
+
+  .icon-md {
+    @apply w-8 aspect-square p-1;
+  }
+
+  .tag-black {
+    @apply text-sm bg-2 px-2 py-1 mt-4 rounded-2xl border-2 border-[#262626];
+  }
 
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
@@ -214,7 +233,7 @@ footer li {
 }
 
 .cards-sm .carousel-card img {
-  aspect-ratio: 1/1.15;
+  /* aspect-ratio: 1/1.15; */
 }
 
 .cards-md .carousel-card {
@@ -223,7 +242,7 @@ footer li {
 }
 
 .cards-md .carousel-card img {
-  aspect-ratio: 1 / 1;
+  /* aspect-ratio: 1 / 1; */
 }
 
 .cards-lg .carousel-card {
@@ -232,7 +251,7 @@ footer li {
 }
 
 .cards-lg .carousel-card img {
-  aspect-ratio: 1 / 1.26;
+  /* aspect-ratio: 1 / 1.26; */
 }
 
 /* media queries */

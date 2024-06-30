@@ -8,7 +8,26 @@ export default {
     scrollSnapType: {
       'proximity': "proximity"
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        flicker: {
+          '0%': {opacity: '0%'},
+          '100%': {opacity: '100%'}
+        },
+        'skeleton': {
+          '0%': {
+            backgroundColor: '#222222'
+          },
+          '100%': {
+            backgroundColor: '#121212'
+          }
+        }
+      },
+      animation: {
+        suspense: 'flicker 1000ms linear infinite',
+        skeleton: 'skeleton 1s linear infinite alternate'
+      }
+    },
   },
   plugins: [],
 }

@@ -1,23 +1,33 @@
 import { useParams } from "react-router-dom";
 
-import Featured from "../components/movies-shows/Featured";
 import Information from "../components/details/Information";
 import Seasons from "../components/details/Seasons";
 import Sidebar from "../components/details/Sidebar";
+import { useQuery } from '@tanstack/react-query';
+import { retrieve } from "../utils/user";
+import Featured from "../components/details/Featured";
+import Error from './../components/helpers/Error';
+import Loader from './../components/helpers/Loader';
 
 export default function Details() {
-  const { type } = useParams();
-
+  const { type, id } = useParams();
+  const { data, isLoading,isFetched } = useQuery({
+    queryKey: [`${type}/${id}`],
+    queryFn: () => retrieve(`${type}/details/${id}`)
+  });
+  if(isLoading) return <Loader />
+  
+  if(!data.success) return <Error styles="h-[80vh] flex flex-col justify-center mt-20" />
+  
   return <div className="padding-inline mt-24">
-    <Featured />
+    {isFetched && <Featured creation={data.payload} />}
 
-    <div className="lg:flex items-start gap-4 py-20">
-      <div className="details-container">
-        {type === "show" && <Seasons />}
-        <Information />
+    {isFetched && <div className="lg:flex items-start gap-4 py-20">
+      <div className="details-container grow">
+        {type === "shows" && <Seasons creation={data.payload} totalSeasons={data.number_of_seasons} />}
+        <Information data={data?.payload} />
       </div>
-      <Sidebar />
-    </div>
-
+      <Sidebar creation={data?.payload} />
+    </div>}
   </div>
 }

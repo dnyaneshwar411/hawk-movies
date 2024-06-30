@@ -28,6 +28,7 @@ export function get() {
   return async function (dispatch) {
     const response = await retrieve("user/profile");
     if (response.success) dispatch({ type: "user/set", payload: response.payload });
+    else dispatch({ type: "user/unset-loading" });
   }
 }
 
@@ -36,6 +37,5 @@ export function unset() {
     const response = await send("auth/logout");
     if (response.success) dispatch({ type: "user/unset" });
     else toast.error(`Unable to logout - ${response.payload}`);
-    dispatch({ type: "user/unset-loading" })
   }
 }

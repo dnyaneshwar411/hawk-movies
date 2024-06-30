@@ -6,7 +6,6 @@ export default function Season({ item, episodes }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return <div className="bg-2 my-4 p-8 rounded-md border-2 border-[#262626]">
-
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-4">
         <h3>Season {item.toString().padStart(2, "0")}</h3>
