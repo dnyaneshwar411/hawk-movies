@@ -6,7 +6,6 @@ export async function find(req, res) {
     if (!user) return res.status(400).json({ payload: "Error finding you account" });
     return res.status(200).json({ payload: user });
   } catch (error) {
-    console.log("request triggered", error.message)
     return res.status(500).json({ payload: error.message });
   }
 }

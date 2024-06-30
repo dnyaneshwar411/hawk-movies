@@ -33,8 +33,8 @@ export async function login(req, res) {
     const user = await User.findOne({ email });
     if (!user) return res.status(400).json({ payload: "No account exists with this email" });
 
-    const match = comparePassword(password, user.password);
-    if (!match) return res.status(400).json({ payload: "Enter correct password" });
+    const match = await comparePassword(password, user.password);
+    if (!match.status) return res.status(400).json({ payload: match.payload });
 
     const token = jwt.sign({ email, _id: user._id, name: user.name }, process.env.JWT_SECRET, { expiresIn: 86400000 });
 
@@ -45,7 +45,6 @@ export async function login(req, res) {
 
     return res.status(200).json({ payload: { email, name: user.name, username: user.username } });
   } catch (error) {
-    console.log(error.message);
     res.status(500).json({ payload: error.message });
   }
 }

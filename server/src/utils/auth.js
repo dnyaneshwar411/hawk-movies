@@ -20,5 +20,11 @@ export async function hashPassword(password) {
 }
 
 export async function comparePassword(password, hashedPassword) {
-  return bcrypt.compare(password, hashedPassword);
+  try {
+    const match = await bcrypt.compare(password, hashedPassword)
+    if(!match) return { status: false, payload: "Enter correct password" };
+    return { status: true };
+  } catch (error) {
+    return { status: false, payload: error.message };
+  }
 }
