@@ -12,10 +12,11 @@ export async function retrieve(endpoint) {
     });
 
     const data = await response.json();
-    if (!response.ok) throw new Error(data.payload);
+    // console.log(data)
+    if (!response.ok) return { success: false, payload: data.payload }
     return { success: true, payload: data.payload };
   } catch (error) {
-    return { success: false, payload: error.message }
+    return { success: false, payload: error.message };
   }
 }
 

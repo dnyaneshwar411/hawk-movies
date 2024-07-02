@@ -47,7 +47,7 @@ export async function movieDetails(req, res) {
     if (cache.has(cacheId)) return res.status(200).json({ success: true, payload: JSON.parse(cache.get(cacheId))});
 
     // fetch data from the API
-    const response = await retrieve(`movie/${id}?append_to_response=videos,reviews,credits`);
+    const response = await retrieve(`movie/${id}?append_to_response=videos,reviews,credits,images`);
     if (!response.success) return res.status(404).json({ success: false, payload: response.payload });
 
     // store the fetched data in the cache

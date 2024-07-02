@@ -48,7 +48,7 @@ export async function showDetails(req, res) {
     if (cache.has(cacheId)) return res.status(200).json({ success: true, paylaod: JSON.parse(cache.get(cacheId))});
 
     // fetch data from the API
-    const response = await retrieve(`tv/${id}?append_to_response=videos,reviews,credits`);
+    const response = await retrieve(`tv/${id}?append_to_response=videos,reviews,credits,images`);
     if (!response.success) return res.status(404).json({ success: false, payload: response.payload });
 
     // store the fetched data in the cache
@@ -57,5 +57,30 @@ export async function showDetails(req, res) {
     return res.status(200).json({ success: true, payload: response.payload });
   } catch (error) {
     return res.status(500).json({ success: false, payload: error.message });
+  }
+}
+
+/**
+ * 
+ * @returns detailed information about any particular season details for any particular show. 
+ */
+export async function seasonDetails(req, res) {
+  try {
+    const {showId, seasonId} = req.params;
+
+    // check if data present in cache and return data if present in cache
+    const cacheId  = `season-${showId}/${seasonId}`;
+    if(cache.has(cacheId)) return res.status(200).json({success: true, payload: JSON.parse(cache.get(cacheId))});
+    
+    // fetch data from the API
+    const response = await retrieve(`tv/${showId}/season/${seasonId}`);
+    if (!response.success) return res.status(404).json({ success: false, payload: response.payload });
+
+    // store the fetched data in the cache
+    cache.set(cacheId, JSON.stringify(response.payload));
+
+    return res.status(200).json({ success: true, payload: response.payload });
+  } catch (error) {
+    return res.status(500).json({ success: false, payload: error.message });    
   }
 }

@@ -35,7 +35,9 @@ export default function MovieBar({
 
     {isLoading && <Skeleton cardsType={cardsType} />}
 
-    {(!data?.success || error) && <Error cardsType={cardsType} />}
+    {error && <Error cardsType={cardsType} />}
+
+    {(data && !data?.success) && <Error cardsType={cardsType} />}
   </div>
 }
 

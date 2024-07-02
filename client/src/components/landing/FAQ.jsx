@@ -8,9 +8,9 @@ export default function FAQ({ id, question, answer }) {
   }
 
   return <div onClick={toggleAnswer} role="button" className="select-none py-9 max-w-[400px] md:max-w-[800px] mx-auto md:mx-0 flex items-start gap-4 border-b-2 border-[#1f1f1f]">
-    <div className="tab">
+    {/* <div className="tab">
       {id}
-    </div>
+    </div> */}
 
     <div className="grow">
       <div className="flex items-center justify-between">

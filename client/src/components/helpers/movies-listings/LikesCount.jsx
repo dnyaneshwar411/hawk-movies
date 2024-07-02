@@ -10,7 +10,7 @@ export default function DurationSeasons({ creation }) {
       </p>
 
       <p className="tag-black">
-        <p className="leading-[30px]">{creation.vote_count} votes</p>
+        <span className="leading-[30px]">{creation.vote_count} votes</span>
       </p>
     </div>
   </>

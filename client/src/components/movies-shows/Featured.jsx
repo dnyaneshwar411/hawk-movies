@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import FeaturedInfo from './FeaturedInfo';
-import { retrieve } from '../../utils/user';
+
 import Loader from './../helpers/Loader';
 import Error from '../helpers/Error';
-import { useState } from 'react';
+import { retrieve } from '../../utils/user';
+import FeaturedInfo from './FeaturedInfo';
 
 export default function Featured() {
   const [current, setCurrent] = useState(0);
@@ -33,6 +34,8 @@ export default function Featured() {
     />
     <FeaturedInfo
       title={data.payload.results[current].original_title}
+      overview={data.payload.results[current].overview}
+      id={data.payload.results[current].id}
       prev={prev}
       next={next}
     />
