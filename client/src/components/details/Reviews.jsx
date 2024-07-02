@@ -19,7 +19,7 @@ export default function Reviews({ data }) {
     </div>
 
     <div className="no-scrollbar snap-x flex gap-4 overflow-x-auto" id="review-carousel">
-      {data.reviews.results.map(review => <Review
+      {data?.reviews?.results && data.reviews.results.map(review => <Review
         key={review.id}
         name={review.author}
         location="India"

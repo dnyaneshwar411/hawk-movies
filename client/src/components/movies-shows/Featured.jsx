@@ -26,7 +26,7 @@ export default function Featured() {
     <button className="btn-red" onClick={refetch}>Load Again</button>
   </div>
 
-  return <div className="w-full bg-center bg-gradient-to-t from-[#141414] to-transparent h-[85vh] flex flex-col rounded-lg overflow-hidden262626 bg-cover relative">
+  return <div className="w-full bg-center bg-gradient-to-t from-[#141414] to-transparent h-[50vh] md:h-[85vh] flex flex-col rounded-lg overflow-hidden262626 bg-cover relative">
     <img
       src={`https://image.tmdb.org/t/p/w1280${data.payload.results[current].backdrop_path || 'ga4OLm4qLxPqKLMzjJlqHxVjst3.jpg'}`}
       className="w-full h-full absolute z-[-1] object-cover rounded-xl"

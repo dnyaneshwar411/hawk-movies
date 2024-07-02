@@ -39,13 +39,14 @@
     /* Firefox */
   }
 
-  /* ===== Scrollbar CSS ===== */
+  /* ===== Custom Scrollbar ===== */
   .custom-scrollbar {
     scrollbar-color: var(--accent);
+    scroll-snap-type: none !important;
   }
-
+  
   .custom-scrollbar::-webkit-scrollbar {
-    height: 5px;
+    height: 10px;
   }
 
   .custom-scrollbar::-webkit-scrollbar-track {
@@ -58,9 +59,9 @@
     border-radius: 12px;
   }
 
-  @media (max-width: 1024px) {
+  @media (min-width: 720px) {
     .custom-scrollbar {
-      scroll-snap-type: x;
+      scroll-snap-type: x proximity !important;
     }
   }
 }

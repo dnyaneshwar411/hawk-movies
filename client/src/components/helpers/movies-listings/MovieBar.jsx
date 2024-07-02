@@ -24,7 +24,6 @@ export default function MovieBar({
       description={description}
       title={title}
     />
-
     {!isLoading && data.success && <Cards
       carouselId={carouselId}
       cardsType={cardsType}
@@ -32,17 +31,14 @@ export default function MovieBar({
       creationType={creationType}
       component={component}
     />}
-
     {isLoading && <Skeleton cardsType={cardsType} />}
-
     {error && <Error cardsType={cardsType} />}
-
     {(data && !data?.success) && <Error cardsType={cardsType} />}
   </div>
 }
 
 function Skeleton({cardsType}) {
   return <div className={`w-full ${cardsType} my-4 flex gap-8 overflow-hidden`}>
-    {Array.from({length: 4}, (_, i) => i).map(index => <div key={index} className={`carousel-card aspect-square rounded-lg animate-skeleton`}></div>)}
+    {Array.from({length: 4}, (_, i) => i).map(index => <div key={index} className={`carousel-card aspect-[2/3] rounded-lg animate-skeleton`}></div>)}
   </div>
 }

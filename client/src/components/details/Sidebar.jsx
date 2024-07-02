@@ -12,11 +12,11 @@ export default function Sidebar({ creation }) {
       {creation?.release_date?.slice(0, 4)}
     </div>
 
-    <Cateorize
+    {creation?.spoken_languages && <Cateorize
       Icon={LanguageIcon}
       title="Available Languages"
       categories={creation?.spoken_languages?.map(language => language.name)}
-    />
+    />}
 
     {creation.budget && <div className="mb-8">
       <p className={titleStyles}><StarIcon className="logo-md" />Finances</p>
@@ -32,22 +32,24 @@ export default function Sidebar({ creation }) {
       </div>
     </div>}
 
-    <Cateorize
+    {creation?.genres && <Cateorize
       Icon={Squares2X2Icon}
       title="Genres"
       categories={creation?.genres?.slice().map(genre => genre.name)}
-    />
-    <Position
-      position={creation?.credits?.crew[0].job}
-      img={creation?.credits?.crew[0]?.profile_path}
-      name={creation?.credits?.crew[0]?.name}
-      // location="India"
-    />
-    <Position
-      position={creation?.credits?.crew[1]?.job}
-      img={creation?.credits?.crew[1]?.profile_path}
-      name={creation?.credits?.crew[1]?.name}
-      // location="India"
-    />
+    />}
+    {creation?.credits && <>
+      <Position
+        position={creation?.credits?.crew[0].job}
+        img={creation?.credits?.crew[0]?.profile_path}
+        name={creation?.credits?.crew[0]?.name}
+        // location="India"
+      />
+      <Position
+        position={creation?.credits?.crew[1]?.job}
+        img={creation?.credits?.crew[1]?.profile_path}
+        name={creation?.credits?.crew[1]?.name}
+        // location="India"
+      />
+    </>}
   </aside>
 }

@@ -10,7 +10,7 @@ export default function Episode({ episode }) {
         {episode.episode_number.toString().padStart(2, 0)}
       </div>
 
-      <Suspense fallback={<div className="grow lg:min-w-28 lg:max-w-32 aspect-[16/9] rounded-md border-2 animate-skeleton">
+      <Suspense fallback={<div className="grow lg:min-w-28 lg:max-w-32 aspect-[16/9] min-h-10 rounded-md border-2 animate-skeleton">
           <Loader />
         </div>}>
         <img

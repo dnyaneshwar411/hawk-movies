@@ -7,7 +7,6 @@ export default function Seasons({totalSeasons}) {
     {Array.from({length: totalSeasons}, (_, i) => i).map(seasonNo => <Season
       key={seasonNo}
       seasonNo={seasonNo + 1}
-      // episodes={3 * (item + 1)}
     />)}
   </div>
 }

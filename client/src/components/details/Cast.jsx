@@ -23,7 +23,7 @@ export default function Cast({ data }) {
     </div>
 
     <div id="cast-carousel" className="w-full custom-scrollbar lg:no-scrollbar lg:snap-x flex gap-4 overflow-x-auto">
-      {data.credits.cast.map((cast, index) => <div key={index} className="carousel-card min-w-28">
+      {data?.credits?.cast && data.credits.cast.map((cast, index) => <div key={index} className="carousel-card min-w-28">
         <img
           src={`https://image.tmdb.org/t/p/w500/${cast.profile_path}`}
           className=" snap-start aspect-square rounded-md object-cover hover:shadow-2xl hover:shadow-[#000] h- full"
