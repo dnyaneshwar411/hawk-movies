@@ -4,7 +4,7 @@ import { retrieve, send } from "../utils/user";
 const userInitialState = {
   account: null,
   isLoggedIn: false,
-  loading: true
+  loading: true,
 }
 
 export function userSlice(state = userInitialState, action) {

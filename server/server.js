@@ -7,6 +7,7 @@ import authRoutes from "./src/routes/auth.route.js";
 import userRoutes from "./src/routes/user.route.js";
 import showsRoutes from "./src/routes/show.route.js";
 import moviesRoutes from "./src/routes/movie.route.js";
+import creationsRoutes from "./src/routes/creations.route.js";
 import database from "./src/database/database.js";
 import { auth } from "./src/middlewares/auth.middleware.js";
 
@@ -30,10 +31,11 @@ app.get("/", function (req, res) {
   return res.status(200).json({ payload: `serving requests on port ${PORT}` });
 });
 
-app.use("/api/auth", authRoutes);       // auth routes
-app.use("/api/user", auth, userRoutes); // user routes
-app.use("/api/movies", moviesRoutes);   // movies routes
-app.use("/api/shows", showsRoutes);     // shows routes
+app.use("/api/auth", authRoutes);                // auth routes
+app.use("/api/user", auth, userRoutes);          // user routes
+app.use("/api/movies", moviesRoutes);            // movies routes
+app.use("/api/shows", showsRoutes);              // shows routes
+app.use("/api/creations", creationsRoutes);      // creations routes
 
 app.listen(PORT, function () {
   database();

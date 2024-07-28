@@ -1,6 +1,6 @@
 import { ClockIcon } from "@heroicons/react/24/outline";
 import { Suspense } from "react";
-import Loader from "../helpers/Loader";
+import Loader from "../common/Loader";
 
 export default function Episode({ episode }) {
   return <div className="py-8 lg:flex items-start gap-4 border-b-2 border-[#262626]">

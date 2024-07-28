@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { get, userSlice } from "./user.slice";
+import { userSlice } from "./user.slice";
 import { moviesSlice } from "./movies.slice";
 
 export const store = configureStore({
@@ -8,5 +8,3 @@ export const store = configureStore({
     movies: moviesSlice
   }
 });
-
-store.dispatch(get());

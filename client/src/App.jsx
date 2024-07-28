@@ -3,10 +3,14 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import Nav from "./components/nav/Nav";
-import Footer from "./components/footer/Footer";
+import Footer from "./components/common/Footer";
 
-import Router from "./routes/Router";
-import Ad from "./components/helpers/Ad";
+import Router from "./Router";
+import Ad from "./components/common/Ad";
+import Initialize from "./providers/Initialize";
+import Search from "./components/search/Search";
+import { useState } from "react";
+import useKeyDown from "./hooks/useKeyDown";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -17,9 +21,14 @@ const queryClient = new QueryClient({
 })
 
 export default function App() {
+  const [toggleSearchBar, setToggleSearchBar] = useState(false);
+  useKeyDown("Slash", () => setToggleSearchBar(true));
+  useKeyDown("Escape", () => setToggleSearchBar(false));
   return (<>
+    <Initialize />
+    {toggleSearchBar && <Search />}
     <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={true} />
+      <ReactQueryDevtools initializeialIsOpen={true} />
       <Toaster position="bottom-right" toastOptions={{ duration: 2000 }} />
       <Nav />
       <main>

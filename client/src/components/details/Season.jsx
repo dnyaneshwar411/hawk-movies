@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { ArrowUpIcon, ArrowDownIcon } from "@heroicons/react/24/solid";
 
-import Loader from '../helpers/Loader';
-import Error from '../helpers/Error';
+import Loader from '../common/Loader';
+import Error from '../common/Error';
 import Episode from './Episode';
 import { retrieve } from '../../utils/user';
 

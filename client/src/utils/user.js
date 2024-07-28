@@ -12,7 +12,6 @@ export async function retrieve(endpoint) {
     });
 
     const data = await response.json();
-    // console.log(data)
     if (!response.ok) return { success: false, payload: data.payload }
     return { success: true, payload: data.payload };
   } catch (error) {

@@ -39,7 +39,7 @@ export default function Sidebar({ creation }) {
     />}
     {creation?.credits && <>
       <Position
-        position={creation?.credits?.crew[0].job}
+        position={creation?.credits?.crew[0]?.job}
         img={creation?.credits?.crew[0]?.profile_path}
         name={creation?.credits?.crew[0]?.name}
         // location="India"

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import FormControl from "../helpers/FormControl";
+import FormControl from "../common/FormControl";
 import usePost from "../../hooks/usePost";
-import Loader from "../helpers/Loader";
+import Loader from "../common/Loader";
 
 
 export default function Register() {

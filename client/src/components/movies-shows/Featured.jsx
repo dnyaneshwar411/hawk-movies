@@ -1,16 +1,13 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
-import Loader from './../helpers/Loader';
-import Error from '../helpers/Error';
+import Loader from './../common/Loader';
+import Error from '../common/Error';
 import { retrieve } from '../../utils/user';
 import FeaturedInfo from './FeaturedInfo';
 
 export default function Featured() {
   const [current, setCurrent] = useState(0);
-
-  const prev = () => setCurrent(prev => prev === 0 ? 7 : prev - 1);
-  const next = () => setCurrent(prev => prev === 7 ? 0 : prev + 1);
 
   const {data, error, isLoading, refetch} = useQuery({
     queryKey: ["banner-movies/shows"],
@@ -36,8 +33,8 @@ export default function Featured() {
       title={data.payload.results[current].original_title}
       overview={data.payload.results[current].overview}
       id={data.payload.results[current].id}
-      prev={prev}
-      next={next}
+      prev={() => setCurrent(prev => prev === 0 ? 7 : prev - 1)}
+      next={() => setCurrent(prev => prev === 7 ? 0 : prev + 1)}
     />
   </div>
 }

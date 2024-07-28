@@ -2,8 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 
 import BarHeading from "./BarHeading";
 import Cards from "./Cards";
-import { retrieve } from "../../../utils/user";
-import Error from "../Error";
+import { retrieve } from "../../utils/user";
+import Error from './../../components/common/Error';
 
 export default function MovieBar({
     endpoint = "movie-shows/movie/popular",

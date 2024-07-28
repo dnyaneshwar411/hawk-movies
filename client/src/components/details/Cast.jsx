@@ -1,6 +1,4 @@
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
-
-import { infoStyles } from "../../utils/styles";
 import { scrollMoviesBar } from "../../utils/events";
 
 export default function Cast({ data }) {
@@ -13,7 +11,7 @@ export default function Cast({ data }) {
   }
 
   if(!data) return <></>
-  return <div className={`mb-4 ${infoStyles} grow`}>
+  return <div className={`mb-4 infoStyles grow`}>
     <div className="flex justify-between items-center mb-4">
       <p>Credits</p>
       <div className="flex">

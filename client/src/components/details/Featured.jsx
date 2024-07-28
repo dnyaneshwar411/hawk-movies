@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FeaturedInfo from "../movies-shows/FeaturedInfo";
-import Loader from "../helpers/Loader";
+import Loader from "../common/Loader";
 
 export default function Featured({creation}) {
   const [current, setCurrent] = useState(0);

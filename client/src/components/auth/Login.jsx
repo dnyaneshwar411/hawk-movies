@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import usePost from "../../hooks/usePost";
-import FormControl from "../helpers/FormControl";
-import Loader from "../helpers/Loader";
+import FormControl from "../common/FormControl";
+import Loader from "../common/Loader";
 import { set } from "../../state/user.slice";
 
 export default function Login() {

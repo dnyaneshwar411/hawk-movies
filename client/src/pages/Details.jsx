@@ -6,8 +6,8 @@ import Sidebar from "../components/details/Sidebar";
 import { useQuery } from '@tanstack/react-query';
 import { retrieve } from "../utils/user";
 import Featured from "../components/details/Featured";
-import Error from './../components/helpers/Error';
-import Loader from './../components/helpers/Loader';
+import Error from './../components/common/Error';
+import Loader from './../components/common/Loader';
 import useScroll from "../hooks/useScroll";
 
 export default function Details() {

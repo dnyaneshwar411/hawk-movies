@@ -1,5 +1,5 @@
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
-import { scrollMoviesBar } from "../../../utils/events";
+import { scrollMoviesBar } from "../../utils/events";
 
 export default function BarNavigation({ carouselId }) {
 

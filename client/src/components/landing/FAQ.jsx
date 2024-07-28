@@ -2,17 +2,10 @@ import { useState } from "react";
 
 export default function FAQ({ id, question, answer }) {
   const [toggled, setToggled] = useState(false);
-
-  function toggleAnswer() {
-    setToggled(prev => !prev);
-  }
-
-  return <div onClick={toggleAnswer} role="button" className="select-none py-9 max-w-[400px] md:max-w-[800px] mx-auto md:mx-0 flex items-start gap-4 border-b-2 border-[#1f1f1f]">
+  return <div onClick={() => setToggled(prev => !prev)} role="button" className="select-none py-9 max-w-[400px] md:max-w-[800px] mx-auto md:mx-0 flex items-start gap-4 border-b-2 border-[#1f1f1f]">
     <div className="bg-[#1f1f1f] px-4 py-2 aspectsquare border-2 border-[#272727] rounded-md">
-    {/* <div className="tab"> */}
       {id}
     </div>
-
     <div className="grow">
       <div className="flex items-center justify-between">
         <h3>{question}</h3>
@@ -20,5 +13,5 @@ export default function FAQ({ id, question, answer }) {
       </div>
       {true && <p className={`max-w-[50ch] mt-4 ${toggled ? "h-auto" : "h-0"} overflow-hidden transition-all duration-700`}>{answer}</p>}
     </div>
-  </div >
+  </div>
 }

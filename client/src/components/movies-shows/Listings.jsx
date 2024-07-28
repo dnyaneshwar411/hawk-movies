@@ -1,4 +1,4 @@
-import MoviesBar from "../helpers/movies-listings/MovieBar";
+import MoviesBar from "../../features/movies-listings/MovieBar";
 
 export default function Listings({ id, title, creations, creationType }) {
   return <div id={id} className="relative px-4 lg:px-10 pt-20 my-20 border-2 border-[#262626] rounded-lg">
