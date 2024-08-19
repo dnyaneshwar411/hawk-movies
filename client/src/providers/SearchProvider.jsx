@@ -10,7 +10,6 @@ export function SearchProvider({ children }) {
   async function searchForResults(query) {
     try {
       setSearching(true);
-      // const result = await debouncedQuery(query);
       setSearchText(query);
     } catch (error) {
       console.log(error)

@@ -1,6 +1,6 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import useSearchContext from "../../providers/SearchProvider";
-import Loader from "../common/Loader";
+import Loader from "../../components/common/Loader";
 
 export default function SearchInput() {
   const { searching, searchText, searchForResults } = useSearchContext();
